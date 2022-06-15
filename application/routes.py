@@ -10,7 +10,7 @@ def add():
 
 @app.route('/add/taskname/<task>')
 def taskname(task):
-    todo = Todos(task =task,completed = False)
+    todo = Todos(task =task)
     db.session.add(todo)
     db.session.commit()
     return task
