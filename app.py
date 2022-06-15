@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
 
 db = SQLAlchemy(app) 
 
-class ToDo(db.Model):
+class Todos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(300))
     completed = db.Column(db.Boolean, default=False)
@@ -22,5 +22,5 @@ db.session.commit()
 def add():
     return  'Added a new todo'
 
-if __name__=='__main__':
-    app.run(debug==True, host='0.0.0.0')
+if __name__=="__main__":
+    app.run(debug=True,host='0.0.0.0')
