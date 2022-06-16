@@ -41,5 +41,10 @@ def update(oldtask,newtask):
 
 @app.route('/list')
 def listB():
-    list1=["ben", "harry", "bob", "jay", "matt", "bill"]
-    return render_template('list.html',  listB=list1, letter="b")
+    list1=["ben", "harry", "bob", "jay", "matt", "bill","zake","ryan","ahmed"]
+    list2=[]
+    for user in list1:
+        a=user[0].upper()
+        user=a+user[1:]
+        list2.append(user)
+    return render_template('list.html',  listB=list2, letter="B")
