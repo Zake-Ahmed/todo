@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+{% for user in listB %}
+{%if user[0] == letter %}
+
+<p>{{ user }}</p>
+
+{% endfor %}
+{% endblock body %}

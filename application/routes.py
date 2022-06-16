@@ -1,5 +1,6 @@
 from application import app, db
 from application.models import Todos
+from flask import render_template
 
 
 @app.route('/add')
@@ -36,3 +37,8 @@ def update(oldtask,newtask):
     todo.task= newtask
     db.session.commit()
     return newtask
+
+@app.route('/list')
+def listB():
+    list1=["ben", "harry", "bob", "jay", "matt", "bill"]
+    return render_template('list.html',  listB=list1, letter="b")
