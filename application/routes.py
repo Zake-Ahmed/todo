@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import Todos
-from flask import render_template
+from flask import render_template,redirect,url_for
 
 
 
@@ -48,3 +48,18 @@ def listB():
         user=a+user[1:]
         list2.append(user)
     return render_template('list.html',  listB=list2, letter="B")
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/task')
+def readall():
+    all_Users = Todos.query.all()
+    return render_template('task.html', all_Users=all_Users)
+
+@app.route('/task#about')
+def taskToAbout():
+    return redirect(url_for('about'))
+     

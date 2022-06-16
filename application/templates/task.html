@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+{% for User in all_Users %}
+        <p><br>  ID:{{User.id}}  ||task:  {{User.task}} ||status:  {{User.completed}} </p>
+    {% endfor %}
+
+{% endblock body %}
