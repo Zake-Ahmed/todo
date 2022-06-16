@@ -59,4 +59,8 @@ def readall():
     all_Users = Todos.query.all()
     return render_template('task.html', all_Users=all_Users)
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
      
