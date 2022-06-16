@@ -59,7 +59,4 @@ def readall():
     all_Users = Todos.query.all()
     return render_template('task.html', all_Users=all_Users)
 
-@app.route('/task#about')
-def taskToAbout():
-    return redirect(url_for('about'))
      
